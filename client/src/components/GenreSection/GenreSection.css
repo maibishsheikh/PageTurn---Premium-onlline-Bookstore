@@ -1,0 +1,82 @@
+.genre-section {
+  background: var(--color-bg-alt);
+}
+
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-md);
+}
+
+.genre-grid.animate .genre-card {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.genre-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-text);
+  border: 2px solid transparent;
+  transition: all var(--transition-base);
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--genre-color, var(--color-accent));
+  transform: scaleY(0);
+  transition: transform var(--transition-base);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.genre-card:hover {
+  border-color: var(--genre-color, var(--color-accent));
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.genre-card:hover::before {
+  transform: scaleY(1);
+}
+
+.genre-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.genre-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.genre-arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all var(--transition-base);
+  color: var(--genre-color, var(--color-accent));
+  font-weight: 700;
+}
+
+.genre-card:hover .genre-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .genre-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

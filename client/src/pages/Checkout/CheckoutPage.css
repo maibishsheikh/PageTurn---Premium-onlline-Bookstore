@@ -1,0 +1,234 @@
+.checkout-page {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+  min-height: 70vh;
+}
+
+.checkout-page h1 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xl);
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Form */
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.form-section {
+  background: var(--color-bg-card);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-light);
+}
+
+.form-section h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  font-family: var(--font-heading);
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-md);
+}
+
+/* Payment */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.payment-option.selected {
+  border-color: var(--color-accent);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.payment-option input {
+  accent-color: var(--color-accent);
+}
+
+.payment-option div {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-option strong {
+  font-size: 0.92rem;
+}
+
+.payment-option span {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.place-order-btn {
+  width: 100%;
+}
+
+/* Summary */
+.checkout-summary {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  border: 1px solid var(--color-border-light);
+  position: sticky;
+  top: 100px;
+}
+
+.checkout-summary h3 {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  font-family: var(--font-heading);
+}
+
+.checkout-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: var(--space-lg);
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.checkout-item img {
+  width: 45px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.checkout-item div {
+  flex: 1;
+}
+
+.ci-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.ci-qty {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.ci-price {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.checkout-totals .summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-xs) 0;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.checkout-totals .summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-md) 0 0;
+  border-top: 2px solid var(--color-border);
+  margin-top: var(--space-sm);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Success */
+.order-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-3xl);
+  gap: var(--space-lg);
+}
+
+.success-icon {
+  font-size: 5rem;
+}
+
+.order-success h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.order-success p {
+  color: var(--color-text-muted);
+  max-width: 400px;
+}
+
+.success-actions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+@media (max-width: 900px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .checkout-summary {
+    position: static;
+  }
+}

@@ -1,0 +1,56 @@
+.page-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--space-lg);
+}
+
+.book-animation {
+  width: 80px;
+  height: 60px;
+  position: relative;
+}
+
+.page-flip {
+  width: 40px;
+  height: 60px;
+  background: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+  position: absolute;
+  right: 0;
+  transform-origin: left center;
+  animation: bookFlip 1.2s ease-in-out infinite;
+  border-radius: 0 4px 4px 0;
+}
+
+.book-base {
+  width: 40px;
+  height: 60px;
+  background: var(--color-primary);
+  border-radius: 4px 0 0 4px;
+  position: absolute;
+  left: 0;
+}
+
+.loader-text {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes bookFlip {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(90deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+.skeleton-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.skeleton-info {
+  padding: var(--space-md) var(--space-xs);
+}

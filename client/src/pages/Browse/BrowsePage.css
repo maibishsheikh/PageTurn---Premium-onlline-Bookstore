@@ -1,0 +1,229 @@
+.browse-page {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+  min-height: 80vh;
+}
+
+.browse-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.browse-header h1 {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.browse-header p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.browse-controls {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.filter-toggle {
+  display: none;
+}
+
+.sort-select {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+/* Layout */
+.browse-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Sidebar */
+.browse-sidebar {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border-light);
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.sidebar-header h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.clear-filters {
+  background: none;
+  border: none;
+  color: var(--color-error);
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-section {
+  margin-bottom: var(--space-lg);
+}
+
+.filter-section h4 {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+}
+
+.filter-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  background: var(--color-bg);
+}
+
+.filter-search:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-chip {
+  padding: 0.35rem 0.75rem;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--color-text-light);
+}
+
+.filter-chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-dark);
+}
+
+.filter-chip.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+/* Main Grid */
+.browse-main .book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-lg);
+}
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3xl);
+  gap: var(--space-md);
+}
+
+.no-results-icon {
+  font-size: 4rem;
+}
+
+.no-results h3 {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+}
+
+.no-results p {
+  color: var(--color-text-muted);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-2xl);
+}
+
+.page-btn {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-accent-dark);
+}
+
+.page-btn.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .browse-layout {
+    grid-template-columns: 1fr;
+  }
+  .filter-toggle {
+    display: inline-flex;
+  }
+  .browse-sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    border-radius: 0;
+    overflow-y: auto;
+    padding: var(--space-xl);
+  }
+  .browse-sidebar.open {
+    display: block;
+  }
+  .browse-main .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}

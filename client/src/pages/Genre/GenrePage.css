@@ -1,0 +1,71 @@
+.genre-page {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+  min-height: 80vh;
+}
+
+.genre-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.genre-header h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.genre-header p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+.genre-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.genre-tab {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-card);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  color: var(--color-text-light);
+}
+
+.genre-tab:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+.genre-tab.active {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
+.genre-page .book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-xl);
+}
+
+.genre-page .no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3xl);
+  gap: var(--space-md);
+}
+
+.genre-page .no-results h3 {
+  color: var(--color-text-muted);
+}

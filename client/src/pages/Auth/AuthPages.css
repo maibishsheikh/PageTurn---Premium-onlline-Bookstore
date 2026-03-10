@@ -1,0 +1,219 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  background: var(--color-bg-alt);
+}
+
+.auth-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 900px;
+  width: 100%;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.auth-visual {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #5d4037 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+}
+
+.auth-visual-content {
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.auth-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: var(--space-lg);
+}
+
+.auth-visual h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-sm);
+}
+
+.auth-visual p {
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+}
+
+.auth-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.auth-feature {
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+}
+
+.auth-form-section {
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-header {
+  margin-bottom: var(--space-xl);
+}
+
+.auth-header h1 {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.auth-header p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.auth-header a {
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-header a:hover {
+  text-decoration: underline;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.auth-form .form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.input-icon-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  transition: border-color var(--transition-fast);
+}
+
+.input-icon-wrapper input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: var(--space-lg) 0;
+  gap: var(--space-md);
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+.auth-divider span {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.social-buttons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-btn {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.social-btn:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.demo-creds {
+  margin-top: var(--space-lg);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.demo-creds code {
+  background: var(--color-bg-alt);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+  .auth-visual {
+    display: none;
+  }
+  .auth-form-section {
+    padding: var(--space-xl);
+  }
+}
