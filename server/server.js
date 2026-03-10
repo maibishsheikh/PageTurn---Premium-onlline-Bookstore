@@ -38,6 +38,10 @@ app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'PageTurn Bookstore API is running', timestamp: new Date().toISOString() });
 });
 
+// Seed route (temporary - remove after seeding)
+const { seedDatabase } = require('./controllers/seedController');
+app.get('/api/seed', seedDatabase);
+
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));
