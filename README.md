@@ -189,4 +189,4 @@ MIT License - feel free to use this project for learning or as a starting point.
 
 ---
 
-Built with ❤️ by PageTurn Team
+Built with ❤️
